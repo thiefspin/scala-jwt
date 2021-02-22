@@ -14,6 +14,8 @@ ThisBuild / scalacOptions ++= Seq(
   "-language:implicitConversions"
 )
 
+
+
 lazy val root = (project in file("."))
   .settings(
     name := "scala-jwt",
@@ -22,5 +24,8 @@ lazy val root = (project in file("."))
       "org.bouncycastle" % "bcprov-jdk16" % "1.46",
       "com.typesafe.play" %% "play-json" % "2.7.4" % Provided,
       "org.scalatest" %% "scalatest" % "3.2.2" % Test
-    )
+    ),
+    githubOwner := "thiefspin",
+    githubRepository := "scala-jwt",
+    githubTokenSource := TokenSource.GitConfig("github.token")
   )
